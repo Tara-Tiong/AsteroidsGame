@@ -18,11 +18,15 @@ public void draw(){
 
 public void keyPressed(){
   if(key == 'w')
-  ship.accelerate(.15);
+  ship.accelerate(.10);
   if(key == 'a')
-  ship.turn(-10);
+  ship.turn(-20);
   if(key == 'd')
-  ship.turn(10);
+  ship.turn(20);
   if(key == 'h')
   ship.hyperspace();
+  if(key == 's')
+  ship.accelerate(-.10);
+  if(key == 'e')
+  ship.accelerate(-.1000);
 }
