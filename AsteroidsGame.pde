@@ -1,7 +1,7 @@
 Spaceship ship = new Spaceship();
 Star[] koen = new Star[200];
 public void setup(){
-  size(500,500);
+  size(700,700);
   for(int i =0; i < koen.length; i++){
     koen[i] = new Star();
   }
@@ -14,19 +14,19 @@ public void draw(){
   }
   ship.show();
   ship.move();
+  ship.decelerate();
 }
 
 public void keyPressed(){
   if(key == 'w')
-  ship.accelerate(.10);
+  ship.accelerate(.2);
+  //ship.move();
   if(key == 'a')
-  ship.turn(-20);
+  ship.turn(-15);
   if(key == 'd')
-  ship.turn(20);
+  ship.turn(15);
   if(key == 'h')
   ship.hyperspace();
   if(key == 's')
-  ship.accelerate(-.10);
-  if(key == 'e')
-  ship.accelerate(-.1000);
+  ship.decelerate();
 }
