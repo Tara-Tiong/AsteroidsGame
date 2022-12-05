@@ -10,7 +10,7 @@ class Asteroid extends Floater{
     xCorners[i] = vertexRadius* Math.cos(i*(2*PI/corners));
     yCorners[i] = vertexRadius* Math.sin(i*(2*PI/corners));
     }
-    myColor = color(0); 
+    myColor = color(255, 150, 255); 
     myStroke = color(255,255,255);
     myCenterX = (int)(Math.random()*(width+1));
     myCenterY = (int)(Math.random()*(height+1));
