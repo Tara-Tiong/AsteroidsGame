@@ -31,6 +31,10 @@ class Asteroid extends Floater{
  public float getY(){
    return (float)myCenterY;
  }
+  public void show(){
+   super.show();
+   strokeWeight(3);
+  }
 }
 
 class ufo extends Asteroid{
