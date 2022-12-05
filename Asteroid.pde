@@ -44,6 +44,8 @@ class ufo extends Asteroid{
   }
   
   public void show(){
+     strokeWeight(3);
+stroke(255);
     beginShape();
     arc((float)myCenterX, (float)myCenterY,40,20,0,TWO_PI);
     arc((float)myCenterX, (float)myCenterY,50,4,0,TWO_PI);
