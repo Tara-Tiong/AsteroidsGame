@@ -33,6 +33,7 @@ class Asteroid extends Floater{
  }
   public void show(){
    super.show();
+   stroke(255);
    strokeWeight(3);
   }
 }
@@ -44,8 +45,9 @@ class ufo extends Asteroid{
   }
   
   public void show(){
-     strokeWeight(3);
-stroke(255);
+    strokeWeight(3);
+    stroke(255);
+    fill(250, 150, 250);
     beginShape();
     arc((float)myCenterX, (float)myCenterY,40,20,0,TWO_PI);
     arc((float)myCenterX, (float)myCenterY,50,4,0,TWO_PI);
