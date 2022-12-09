@@ -7,6 +7,8 @@ ArrayList <ufo> saw = new ArrayList<ufo>();
 ArrayList <Bullet> joanne = new ArrayList<Bullet>();
 public int health = 0;
 public int count = 0;
+public int bonusTime = 0;
+public int interval = 1000;
 public void setup(){
   size(700,700);
   for(int i =0; i < koen.length; i++)
@@ -78,11 +80,17 @@ public void draw(){
         if(dist(joanne.get(i).getX(), joanne.get(i).getY(), saw.get(p).getX(), saw.get(p).getY()) < 50){
           joanne.remove(i);
           saw.remove(p);
+          count+=2;
+          bonusTime = millis();
+          
           break;
         }
       }
     }
-    
+      if(millis() - bonusTime < interval){
+        textAlign(CENTER);
+        text("Kill the aliens! +2", width/2, height/2);
+      }  
     //Points text
     textSize(30);
     fill(255, 150, 255);
@@ -115,8 +123,11 @@ public void draw(){
       gameWin = true;
   }
   //end of gameStart
+
   
- 
+  System.out.print(bonusTime);
+
+    
   if(gameEnd == true){
     noLoop();
     background(0);
@@ -154,8 +165,6 @@ public void mousePressed(){
       firstScreen = true;
       health = 0;
       gameEnd =false;
-      
-      Star[] koen = new Star[200];
       soniA = new ArrayList<Asteroid>();
       saw = new ArrayList<ufo>();
       joanne = new ArrayList<Bullet>();
