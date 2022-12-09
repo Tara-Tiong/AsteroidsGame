@@ -11,7 +11,7 @@ class Asteroid extends Floater{
     yCorners[i] = vertexRadius* Math.sin(i*(2*PI/corners));
     }
     myColor = color(0); 
-    myStroke = color(255,255,255);
+    myStroke = color(255);
     myCenterX = (int)(Math.random()*(width+1));
     myCenterY = (int)(Math.random()*(height+1));
     myXspeed = (Math.random()*2)-1;
@@ -31,27 +31,32 @@ class Asteroid extends Floater{
  public float getY(){
    return (float)myCenterY;
  }
-  public void show(){
+ 
+  public float getRadius(){
+   return (float)vertexRadius;
+ }
+ 
+ public void show(){
    super.show();
-   stroke(255);
-   strokeWeight(3);
-  }
+   strokeWeight(2);
+ }
 }
 
 class ufo extends Asteroid{
   public ufo(){
     super();
+    myColor = color(255,150,255); 
     corners = 0;
   }
   
   public void show(){
     strokeWeight(3);
     stroke(255);
-    fill(250, 150, 250);
+    fill(255,150,255);
     beginShape();
-    arc((float)myCenterX, (float)myCenterY,40,20,0,TWO_PI);
-    arc((float)myCenterX, (float)myCenterY,50,4,0,TWO_PI);
-    arc((float)myCenterX, (float)myCenterY-10,10,10,PI,TWO_PI);
+    arc((float)myCenterX, (float)myCenterY,40,20,0,TWO_PI); // large ellipse
+    arc((float)myCenterX, (float)myCenterY,50,4,0,TWO_PI); // long ellipse
+    arc((float)myCenterX, (float)myCenterY-10,10,10,PI,TWO_PI); //small circle on the top
     endShape();
   }
 }
