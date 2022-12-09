@@ -10,6 +10,7 @@ public int count = 0;
 public int bonusTime = 0;
 public int interval = 1000;
 public void setup(){
+  frameRate(100);
   size(700,700);
   for(int i =0; i < koen.length; i++)
     koen[i] = new Star();
