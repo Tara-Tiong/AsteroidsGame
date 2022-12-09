@@ -126,7 +126,6 @@ public void draw(){
   //end of gameStart
     
   if(gameEnd == true){
-    noLoop();
     background(0);
     textSize(40);
     fill((int)(Math.random()*255), (int)(Math.random()*155), (int)(Math.random()*255));
