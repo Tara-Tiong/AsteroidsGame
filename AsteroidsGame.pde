@@ -123,10 +123,6 @@ public void draw(){
       gameWin = true;
   }
   //end of gameStart
-
-  
-  System.out.print(bonusTime);
-
     
   if(gameEnd == true){
     noLoop();
