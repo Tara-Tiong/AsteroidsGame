@@ -88,15 +88,18 @@ public void draw(){
         }
       }
     }
-      if(millis() - bonusTime < interval){
-        textAlign(CENTER);
-        text("Kill the aliens! +2", width/2, height/2);
-      }  
+    
+    if(millis() - bonusTime < interval){
+      textSize(30);
+      textAlign(CENTER);
+      text("Kill the aliens! +2", width/2, height/2);
+    }  
+      
     //Points text
     textSize(30);
     fill(255, 150, 255);
-    text("Points: " + count, 60, 50); //Points
-    text("Health: " + (3-health), 60, 90);
+    text("Points: " + count, 80, 50); //Points
+    text("Health: " + (3-health), 80, 90);
   
     //ship
     ship.show();
@@ -126,6 +129,7 @@ public void draw(){
   //end of gameStart
     
   if(gameEnd == true){
+    gameStart = false;
     background(0);
     textSize(40);
     fill((int)(Math.random()*255), (int)(Math.random()*155), (int)(Math.random()*255));
